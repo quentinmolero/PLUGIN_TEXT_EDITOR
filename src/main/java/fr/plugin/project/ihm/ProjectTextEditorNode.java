@@ -1,9 +1,10 @@
 package fr.plugin.project.ihm;
 
 import fr.plugin.PluginKeys;
+import fr.plugin.texteditor.ihm.TextEditor;
 import fr.serval.application.project.Project;
 import fr.serval.controller.ProjectTreeNode;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TreeItem;
 
 public class ProjectTextEditorNode implements ProjectTreeNode {
@@ -26,7 +27,7 @@ public class ProjectTextEditorNode implements ProjectTreeNode {
     }
 
     @Override
-    public Label getDisplayComponent() {
-        return new Label("Editeur de texte");
+    public TextArea getDisplayComponent() {
+        return (new TextEditor()).getComponent();
     }
 }
