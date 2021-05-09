@@ -1,10 +1,6 @@
 package fr.plugin.texteditor.ihm;
 
-import fr.serval.application.project.ProjectController;
-import fr.serval.controller.ProjectTreeNode;
 import fr.serval.ihm.IHMComponentBuilder;
-import javafx.scene.Node;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 

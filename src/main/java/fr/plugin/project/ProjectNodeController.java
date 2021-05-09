@@ -4,7 +4,6 @@ import fr.plugin.project.ihm.ProjectTextEditorNode;
 import fr.serval.application.project.Project;
 import fr.serval.controller.NodeController;
 import fr.serval.controller.ProjectTreeNode;
-import fr.serval.ihm.IHMComponentBuilder;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -3,8 +3,6 @@ package fr.plugin.texteditor.ihm;
 import fr.serval.application.ihm.ApplicationMainView;
 import fr.serval.ihm.IHMComponentBuilder;
 import fr.serval.tools.GridPaneConstraintBuilder;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
@@ -12,10 +10,8 @@ import javafx.scene.layout.Priority;
 import javafx.stage.DirectoryChooser;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Scanner;
 
 public class TextEditor implements IHMComponentBuilder {
     private final TextEditorFileTreeView textEditorFileTreeView;
