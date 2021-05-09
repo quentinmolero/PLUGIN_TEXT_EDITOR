@@ -17,11 +17,13 @@ public class TextEditorFileTreeView implements IHMComponentBuilder {
     private final TreeView<File> fileTreeView;
     private final TreeItem<File> rootFolder;
 
-    private TextArea textArea;
+    private final TextEditor textEditor;
 
-    public TextEditorFileTreeView() {
+    public TextEditorFileTreeView(TextEditor textEditor) {
         this.fileTreeView = new TreeView<>();
         this.rootFolder = new TreeItem<>();
+
+        this.textEditor = textEditor;
 
         this.setupComponent();
     }
@@ -35,6 +37,7 @@ public class TextEditorFileTreeView implements IHMComponentBuilder {
             File selectedFile = this.fileTreeView.getSelectionModel().getSelectedItem().getValue();
             if (selectedFile != null && selectedFile.isFile()) {
                 this.openFile(selectedFile);
+                this.textEditor.setOpenedFile(selectedFile);
             }
         });
     }
@@ -68,7 +71,8 @@ public class TextEditorFileTreeView implements IHMComponentBuilder {
     }
 
     public void openFile(File file) {
-        this.textArea.setText(getFileContent(file));
+        this.textEditor.getTextArea().setText(getFileContent(file));
+        this.textEditor.getSaveFile().setDisable(true);
     }
 
     private String getFileContent(File file) {
@@ -83,9 +87,5 @@ public class TextEditorFileTreeView implements IHMComponentBuilder {
             e.printStackTrace();
         }
         return fileContent.toString();
-    }
-
-    public void setTextArea(TextArea textArea) {
-        this.textArea = textArea;
     }
 }
