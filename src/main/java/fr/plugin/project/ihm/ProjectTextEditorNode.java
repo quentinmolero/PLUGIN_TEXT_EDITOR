@@ -4,8 +4,8 @@ import fr.plugin.PluginKeys;
 import fr.plugin.texteditor.ihm.TextEditor;
 import fr.serval.application.project.Project;
 import fr.serval.controller.ProjectTreeNode;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TreeItem;
+import javafx.scene.layout.GridPane;
 
 public class ProjectTextEditorNode implements ProjectTreeNode {
 
@@ -27,7 +27,7 @@ public class ProjectTextEditorNode implements ProjectTreeNode {
     }
 
     @Override
-    public TextArea getDisplayComponent() {
+    public GridPane getDisplayComponent() {
         return (new TextEditor()).getComponent();
     }
 }
